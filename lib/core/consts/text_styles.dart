@@ -1,7 +1,8 @@
-import 'package:doover_test_project/core/consts/font_weight.dart';
+import 'package:doover_test_project/core/consts/colors.dart';
+import 'package:doover_test_project/core/consts/font_weights.dart';
 import 'package:flutter/material.dart';
 
-class DooverTextStyle {
+class DooverTextStyles {
   static const TextStyle kCommentAuthorTextStyle = kDetailedPostTitleTextStyle;
 
   static const TextStyle kCommentBodyTextStyle = kPostBodyTextStyle;
@@ -17,54 +18,54 @@ class DooverTextStyle {
   static const TextStyle kAppBarTextStyle = TextStyle(
     color: Colors.white,
     fontSize: 20,
-    fontWeight: DooverFontWeight.kSemiBoldFontWeight,
+    fontWeight: DooverFontWeights.kSemiBoldFontWeight,
   );
 
   static const TextStyle kPostTitleTextStyle = TextStyle(
     color: Colors.white,
     fontSize: 16,
-    fontWeight: DooverFontWeight.kRegularFontWeight,
+    fontWeight: DooverFontWeights.kRegularFontWeight,
   );
 
   static const TextStyle kPostBodyTextStyle = TextStyle(
     color: Colors.white70,
     fontSize: 14,
-    fontWeight: DooverFontWeight.kRegularFontWeight,
+    fontWeight: DooverFontWeights.kRegularFontWeight,
   );
 
   static const TextStyle kDetailedPostTitleTextStyle = TextStyle(
     color: Colors.white,
     fontSize: 16,
-    fontWeight: DooverFontWeight.kSemiBoldFontWeight,
+    fontWeight: DooverFontWeights.kSemiBoldFontWeight,
   );
 
   static const TextStyle kDetailedPostBodyTextStyle = TextStyle(
     color: Colors.white70,
     fontSize: 12,
-    fontWeight: DooverFontWeight.kMediumFontWeight,
+    fontWeight: DooverFontWeights.kMediumFontWeight,
   );
 
   static const TextStyle kAlbumTitleTextStyle = TextStyle(
     color: Colors.white,
     fontSize: 14,
-    fontWeight: DooverFontWeight.kMediumFontWeight,
+    fontWeight: DooverFontWeights.kMediumFontWeight,
   );
 
   static const TextStyle kAlbumDescriptionTextStyle = TextStyle(
     color: Colors.white,
     fontSize: 12,
-    fontWeight: DooverFontWeight.kMediumFontWeight,
+    fontWeight: DooverFontWeights.kMediumFontWeight,
   );
 
   static const TextStyle kContactCredentialTitleTextStyle = TextStyle(
-    color: Color(0xFF7F78A7), // TODO: Create colors consts
+    color: DooverColors.kInactiveCheckboxColor, // TODO: Create colors consts
     fontSize: 12,
-    fontWeight: DooverFontWeight.kMediumFontWeight,
+    fontWeight: DooverFontWeights.kMediumFontWeight,
   );
 
   static const TextStyle kContactNickTextStyle = TextStyle(
-    color: Color(0xFF6C63FF),
+    color: DooverColors.kButtonColor,
     fontSize: 12,
-    fontWeight: DooverFontWeight.kMediumFontWeight,
+    fontWeight: DooverFontWeights.kMediumFontWeight,
   );
 }
