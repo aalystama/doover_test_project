@@ -11,8 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.0
+  http: ^0.12.2
+  json_serializable: ^3.5.1
+  build_runner: ^1.10.13
 
 dev_dependencies:
   flutter_test:
