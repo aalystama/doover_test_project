@@ -1,3 +1,4 @@
+import 'package:doover_test_project/core/consts/colors.dart';
 import 'package:doover_test_project/core/consts/font_weights.dart';
 import 'package:flutter/material.dart';
 
@@ -57,13 +58,13 @@ class DooverTextStyles {
   );
 
   static const TextStyle kContactCredentialTitleTextStyle = TextStyle(
-    color: Color(0xFF7F78A7), // TODO: Create colors consts
+    color: DooverColors.kInactiveCheckboxColor, // TODO: Create colors consts
     fontSize: 12,
     fontWeight: DooverFontWeights.kMediumFontWeight,
   );
 
   static const TextStyle kContactNickTextStyle = TextStyle(
-    color: Color(0xFF6C63FF),
+    color: DooverColors.kButtonColor,
     fontSize: 12,
     fontWeight: DooverFontWeights.kMediumFontWeight,
   );
