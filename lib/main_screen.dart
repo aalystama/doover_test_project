@@ -35,6 +35,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           child: DooverAppBar(
             title: _widgetTitles[_currentView],
+            isButtonVisible: false,
           ),
         ),
         body: _bodyWidgets.elementAt(_currentView),

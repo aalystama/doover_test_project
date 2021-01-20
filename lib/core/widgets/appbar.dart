@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class DooverAppBar extends StatelessWidget {
   final String title;
-  final bool isAppBarVisible;
+  final bool isButtonVisible;
 
-  const DooverAppBar({Key key, this.title, this.isAppBarVisible = true})
+  const DooverAppBar({Key key, this.title, this.isButtonVisible = true})
       : super(key: key);
 
   @override
@@ -20,13 +20,16 @@ class DooverAppBar extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: IconButton(
-              padding: EdgeInsets.zero,
-              icon: Icon(Icons.arrow_back),
-              color: Colors.white,
-              onPressed: () {},
+          Offstage(
+            offstage: !isButtonVisible,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                padding: EdgeInsets.zero,
+                icon: Icon(Icons.arrow_back),
+                color: Colors.white,
+                onPressed: () {},
+              ),
             ),
           ),
           Center(
