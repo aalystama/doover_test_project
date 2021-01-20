@@ -11,8 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.0
+  http: ^0.12.2
+  json_serializable: ^3.5.1
+  build_runner: ^1.10.13
+  get_it: ^5.0.4
+  flutter_bloc: ^6.1.1
 
 dev_dependencies:
   flutter_test:
@@ -25,9 +28,9 @@ flutter:
   fonts:
     - family: Raleway
       fonts:
-        - asset: fonts/Raleway-Regular.ttf
+        - asset: assets/fonts/Raleway-Regular.ttf
           weight: 400
-        - asset: fonts/Raleway-Medium.ttf
+        - asset: assets/fonts/Raleway-Medium.ttf
           weight: 500
-        - asset: fonts/Raleway-SemiBold.ttf
+        - asset: assets/fonts/Raleway-SemiBold.ttf
           weight: 600
