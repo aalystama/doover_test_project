@@ -13,6 +13,12 @@ class PostsFailure extends PostsState {
   PostsFailure(this.message);
 }
 
+class PostsCommentsSuccess extends PostsState {
+  final List<Comment> comments;
+
+  PostsCommentsSuccess(this.comments);
+}
+
 class PostsSuccess extends PostsState {
   final List<Post> posts;
 

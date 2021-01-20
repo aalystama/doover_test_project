@@ -16,4 +16,8 @@ class DooverColors {
   static const Color kButtonColor = Color(0xFF6C63FF);
 
   static const Color kBottomNavBarColor = Color(0xFF231D49);
+
+  static const Color kAvatarBackgroundColor = Color.fromRGBO(38, 50, 56, 0.38);
+
+  static const Color kAvatarIconColor = Color(0xFF979797);
 }

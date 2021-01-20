@@ -20,22 +20,27 @@ class DooverAppBar extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Offstage(
-            offstage: !isButtonVisible,
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                padding: EdgeInsets.zero,
-                icon: Icon(Icons.arrow_back),
-                color: Colors.white,
-                onPressed: () {},
-              ),
-            ),
-          ),
           Center(
             child: Text(
               title,
               style: DooverTextStyles.kAppBarTextStyle,
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Offstage(
+              offstage: !isButtonVisible,
+              child: IconButton(
+                padding: EdgeInsets.zero,
+                icon: Icon(Icons.arrow_back),
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
             ),
           ),
         ],
