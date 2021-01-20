@@ -8,18 +8,18 @@ abstract class PostsRemoteDataSource {
 }
 
 class PostsRemoteDataSourceImpl implements PostsRemoteDataSource {
-  static const String path = '$API_URL/posts/';
+  static const String _path = '$API_URL/posts/';
 
   @override
   Future<Response> getComments(int postId) async {
-    Response response = await get(path + '$postId/comments');
+    Response response = await get(_path + '$postId/comments');
 
     return response;
   }
 
   @override
   Future<Response> getPosts() async {
-    Response response = await get(path);
+    Response response = await get(_path);
 
     return response;
   }

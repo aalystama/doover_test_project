@@ -1,3 +1,4 @@
+import 'package:doover_test_project/features/posts/presentation/widgets/posts_list_view.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -6,8 +7,19 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final List<Widget> _bodyWidgets = [];
-  final List<String> _widgetTitles = ['News', 'Gallery', 'Check', 'Contacts'];
+  final List<Widget> _bodyWidgets = [
+    PostsListView(),
+    Offstage(),
+    Offstage(),
+    Offstage(),
+  ];
+
+  final List<String> _widgetTitles = [
+    'News',
+    'Gallery',
+    'Check',
+    'Contacts',
+  ];
 
   int _currentView;
 

@@ -1,7 +1,11 @@
+import 'package:doover_test_project/core/injection_container.dart';
 import 'package:doover_test_project/main_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  setupInjections();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
