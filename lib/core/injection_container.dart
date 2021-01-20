@@ -1,4 +1,4 @@
-import 'package:doover_test_project/features/posts/controllers/posts_cubit.dart';
+import 'package:doover_test_project/features/posts/controllers/posts_cubit/posts_cubit.dart';
 import 'package:doover_test_project/features/posts/data/datasources/posts_remote_datasource.dart';
 import 'package:doover_test_project/features/posts/data/repositories/posts_repository.dart';
 import 'package:get_it/get_it.dart';

@@ -1,6 +1,6 @@
 import 'package:doover_test_project/core/consts/paddings.dart';
 import 'package:doover_test_project/core/injection_container.dart';
-import 'package:doover_test_project/features/posts/controllers/posts_cubit.dart';
+import 'package:doover_test_project/features/posts/controllers/posts_cubit/posts_cubit.dart';
 import 'package:doover_test_project/features/posts/presentation/widgets/post_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

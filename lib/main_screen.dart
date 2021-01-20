@@ -1,3 +1,4 @@
+import 'package:doover_test_project/core/widgets/appbar.dart';
 import 'package:doover_test_project/features/posts/presentation/widgets/posts_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -25,38 +26,45 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          _bodyWidgets.elementAt(_currentView),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _currentView,
-        onTap: (int index) {
-          setState(() {
-            _currentView = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: _widgetTitles[0],
+    return SafeArea(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size(
+            MediaQuery.of(context).size.width,
+            kToolbarHeight,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.panorama_rounded),
-            label: _widgetTitles[1],
+          child: DooverAppBar(
+            title: _widgetTitles[_currentView],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.check_box),
-            label: _widgetTitles[2],
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.contacts),
-            label: _widgetTitles[3],
-          ),
-        ],
+        ),
+        body: _bodyWidgets.elementAt(_currentView),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _currentView,
+          onTap: (int index) {
+            setState(() {
+              _currentView = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: _widgetTitles[0],
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.panorama_rounded),
+              label: _widgetTitles[1],
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.check_box),
+              label: _widgetTitles[2],
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.contacts),
+              label: _widgetTitles[3],
+            ),
+          ],
+        ),
       ),
     );
   }
