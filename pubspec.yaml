@@ -15,6 +15,7 @@ dependencies:
   json_serializable: ^3.5.1
   build_runner: ^1.10.13
   get_it: ^5.0.4
+  flutter_bloc: ^6.1.1
 
 dev_dependencies:
   flutter_test:

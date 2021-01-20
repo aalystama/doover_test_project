@@ -1,5 +1,8 @@
+import 'package:doover_test_project/core/injection_container.dart';
+import 'package:doover_test_project/features/posts/controllers/posts_cubit.dart';
 import 'package:doover_test_project/features/posts/presentation/widgets/posts_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -8,7 +11,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   final List<Widget> _bodyWidgets = [
-    PostsListView(),
+    BlocProvider<PostsCubit>(
+      create: (context) => getIt<PostsCubit>(),
+      child: PostsListView(),
+    ),
     Offstage(),
     Offstage(),
     Offstage(),
