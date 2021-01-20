@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:doover_test_project/features/posts/data/datasources/posts_remote_datasource.dart';
 import 'package:doover_test_project/features/posts/data/models/comment.dart';
 import 'package:doover_test_project/features/posts/data/models/post.dart';
@@ -18,7 +20,7 @@ class PostsRepositoryImpl implements PostsRepostitory {
   Future<List<Comment>> getComments(int postId) async {
     Response data = await postsRemoteDataSource.getComments(postId);
 
-    return (data.body as List)
+    return (jsonDecode(data.body) as List)
         .map((object) => Comment.fromJson(object))
         .toList();
   }
@@ -27,6 +29,8 @@ class PostsRepositoryImpl implements PostsRepostitory {
   Future<List<Post>> getPosts() async {
     Response data = await postsRemoteDataSource.getPosts();
 
-    return (data.body as List).map((object) => Post.fromJson(object)).toList();
+    return (jsonDecode(data.body) as List)
+        .map((object) => Post.fromJson(object))
+        .toList();
   }
 }

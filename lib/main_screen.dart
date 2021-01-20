@@ -1,8 +1,5 @@
-import 'package:doover_test_project/core/injection_container.dart';
-import 'package:doover_test_project/features/posts/controllers/posts_cubit.dart';
 import 'package:doover_test_project/features/posts/presentation/widgets/posts_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -11,10 +8,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   final List<Widget> _bodyWidgets = [
-    BlocProvider<PostsCubit>(
-      create: (context) => getIt<PostsCubit>(),
-      child: PostsListView(),
-    ),
+    PostsListView(),
     Offstage(),
     Offstage(),
     Offstage(),
@@ -27,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
     'Contacts',
   ];
 
-  int _currentView;
+  int _currentView = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +33,12 @@ class _MainScreenState extends State<MainScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        currentIndex: _currentView,
+        onTap: (int index) {
+          setState(() {
+            _currentView = index;
+          });
+        },
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

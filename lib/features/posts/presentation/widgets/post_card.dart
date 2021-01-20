@@ -1,3 +1,4 @@
+import 'package:doover_test_project/core/consts/colors.dart';
 import 'package:doover_test_project/core/consts/paddings.dart';
 import 'package:doover_test_project/core/consts/text_styles.dart';
 import 'package:doover_test_project/features/posts/data/models/post.dart';
@@ -12,7 +13,12 @@ class PostCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: DooverPaddings.kPostCardPadding,
+      decoration: BoxDecoration(
+        color: DooverColors.kCardBackgroundColor,
+        borderRadius: BorderRadius.circular(4),
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
             post.title,

@@ -1,3 +1,4 @@
+import 'package:doover_test_project/core/consts/colors.dart';
 import 'package:doover_test_project/core/injection_container.dart';
 import 'package:doover_test_project/main_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'Raleway',
+        scaffoldBackgroundColor: DooverColors.kScaffoldBackgroundColor,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MainScreen(),
