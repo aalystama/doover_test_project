@@ -3,7 +3,9 @@ import 'package:doover_test_project/core/consts/paddings.dart';
 import 'package:doover_test_project/core/consts/text_styles.dart';
 import 'package:doover_test_project/core/widgets/appbar.dart';
 import 'package:doover_test_project/features/posts/controllers/posts_cubit/posts_cubit.dart';
+import 'package:doover_test_project/features/posts/data/models/comment.dart';
 import 'package:doover_test_project/features/posts/data/models/post.dart';
+import 'package:doover_test_project/features/posts/presentation/screens/comments_screen.dart';
 import 'package:doover_test_project/features/posts/presentation/widgets/comment_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +20,7 @@ class DetailedPostScreen extends StatefulWidget {
 }
 
 class _DetailedPostScreenState extends State<DetailedPostScreen> {
-  bool isLoaded = false;
+  List<Comment> comments;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,7 @@ class _DetailedPostScreenState extends State<DetailedPostScreen> {
                     listener: (context, state) {
                       if (state is PostsCommentsSuccess) {
                         setState(() {
-                          isLoaded = true;
+                          comments = state.comments;
                         });
                       }
                     },
@@ -88,10 +90,18 @@ class _DetailedPostScreenState extends State<DetailedPostScreen> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Offstage(
-                offstage: !isLoaded,
+                offstage: comments == null,
                 child: FlatButton(
                   padding: EdgeInsets.zero,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => CommentsScreen(
+                          comments: comments,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     padding: DooverPaddings.kPostCardPadding,
                     height: kToolbarHeight,
@@ -108,7 +118,7 @@ class _DetailedPostScreenState extends State<DetailedPostScreen> {
                             children: [
                               TextSpan(text: 'Show me '),
                               TextSpan(
-                                text: '64 result',
+                                text: '${comments?.length ?? ''} result',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ],
