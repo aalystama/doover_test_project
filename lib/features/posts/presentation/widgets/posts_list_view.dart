@@ -1,4 +1,5 @@
 import 'package:doover_test_project/features/posts/controllers/posts_cubit.dart';
+import 'package:doover_test_project/features/posts/presentation/widgets/post_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,8 +18,8 @@ class PostsListView extends StatelessWidget {
 
         if (state is PostsSuccess) {
           return ListView.separated(
-            itemBuilder: (context, index) {},
-            separatorBuilder: (context, index) {},
+            itemBuilder: (context, index) => PostCard(state.posts[index]),
+            separatorBuilder: (context, index) => SizedBox(height: 10),
             itemCount: state.posts.length,
           );
         }
