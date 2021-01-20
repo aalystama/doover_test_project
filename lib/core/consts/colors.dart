@@ -14,4 +14,6 @@ class DooverColors {
   static const Color kActiveCheckboxTile = Color.fromRGBO(108, 99, 255, 0.25);
 
   static const Color kButtonColor = Color(0xFF6C63FF);
+
+  static const Color kBottomNavBarColor = Color(0xFF322C54);
 }

@@ -1,3 +1,4 @@
+import 'package:doover_test_project/core/consts/colors.dart';
 import 'package:doover_test_project/core/widgets/appbar.dart';
 import 'package:doover_test_project/features/posts/presentation/widgets/posts_list_view.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +43,9 @@ class _MainScreenState extends State<MainScreen> {
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentView,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: DooverColors.kInactiveCheckboxColor,
+          backgroundColor: DooverColors.kBottomNavBarColor,
           onTap: (int index) {
             setState(() {
               _currentView = index;
